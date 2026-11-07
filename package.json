@@ -1,7 +1,7 @@
 {
   "name": "petconecta",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vp dev",
@@ -10,6 +10,11 @@
     "api": "node --watch server/index.js",
     "check": "vp check"
   },
-  "dependencies": {"dotenv": "^16.4.5", "express": "^4.21.2"},
-  "devDependencies": {"vite-plus": "latest"}
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "vite-plus": "latest"
+  }
 }

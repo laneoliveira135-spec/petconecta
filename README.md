@@ -29,7 +29,7 @@ A página deverá mostrar **Status da API: ok** e a data/hora retornada pela API
 Abra http://localhost:3000/api/health. Resposta esperada (horário variável):
 
 ```json
-{"status":"ok","app":"PetConecta","hora":"2026-10-28T19:00:00.000Z"}
+{ "status": "ok", "app": "PetConecta", "hora": "2026-10-28T19:00:00.000Z" }
 ```
 
 ## Conferências
