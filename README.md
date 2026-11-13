@@ -1,349 +1,223 @@
-# \# PetConecta 🐾
+# PetConecta 🐾
 
-#
+Sistema de gerenciamento de doações para a ONG fictícia **PetConecta**, dedicada ao resgate e cuidado de cães e gatos em Porto Alegre/RS.
 
-# Sistema de gerenciamento de doações para a ONG fictícia \*\*PetConecta\*\*, dedicada ao resgate e cuidado de cães e gatos em Porto Alegre/RS.
+**Projeto Integrador Extensionista II — ADS | Atividade 1**
 
-#
+## Objetivo do projeto
 
-# \*\*Projeto Integrador Extensionista II — ADS | Atividade 1\*\*
+O PetConecta tem como objetivo apoiar a organização das atividades de uma ONG de proteção animal, facilitando futuramente o gerenciamento de doadores, doações, campanhas e animais resgatados.
 
-#
+Nesta primeira atividade, foi desenvolvida a estrutura inicial da aplicação, com uma interface web e uma API para verificar a comunicação entre frontend e backend.
 
-# \## Objetivo do projeto
+## Tecnologias utilizadas
 
-#
+- **JavaScript:** linguagem de programação utilizada no projeto.
 
-# O PetConecta tem como objetivo apoiar a organização das atividades de uma ONG de proteção animal, facilitando futuramente o gerenciamento de doadores, doações, campanhas e animais resgatados.
+- **Vite+:** ferramenta de desenvolvimento e compilação do frontend.
 
-#
+- **HTML e CSS:** estrutura e apresentação da interface.
 
-# Nesta primeira atividade, foi desenvolvida a estrutura inicial da aplicação, com uma interface web e uma API para verificar a comunicação entre frontend e backend.
+- **Node.js:** ambiente de execução da API.
 
-#
+- **Express:** framework utilizado para criar a API.
 
-# \## Tecnologias utilizadas
+- **Git:** controle de versões do projeto.
 
-#
+- **GitHub:** hospedagem pública do código-fonte.
 
-# \- \*\*JavaScript:\*\* linguagem de programação utilizada no projeto.
+## Funcionalidades implementadas
 
-# \- \*\*Vite+:\*\* ferramenta de desenvolvimento e compilação do frontend.
+- Página inicial do PetConecta.
 
-# \- \*\*HTML e CSS:\*\* estrutura e apresentação da interface.
+- API Express com a rota `GET /api/health`.
 
-# \- \*\*Node.js:\*\* ambiente de execução da API.
+- Verificação do status de funcionamento da API.
 
-# \- \*\*Express:\*\* framework utilizado para criar a API.
+- Exibição da data e hora retornadas pelo servidor.
 
-# \- \*\*Git:\*\* controle de versões do projeto.
+- Comunicação entre frontend e backend por meio do proxy `/api` configurado no Vite+.
 
-# \- \*\*GitHub:\*\* hospedagem pública do código-fonte.
+- Configuração de variáveis de ambiente.
 
-#
+- Scripts para desenvolvimento e compilação.
 
-# \## Funcionalidades implementadas
+## Requisitos para execução
 
-#
+Antes de iniciar, é necessário ter:
 
-# \- Página inicial do PetConecta.
+- Node.js instalado.
 
-# \- API Express com a rota `GET /api/health`.
+- Git instalado.
 
-# \- Verificação do status de funcionamento da API.
+- Vite+ disponível pelo comando `vp`.
 
-# \- Exibição da data e hora retornadas pelo servidor.
+- VS Code (opcional).
 
-# \- Comunicação entre frontend e backend por meio do proxy `/api` configurado no Vite+.
+## Como executar no Windows
 
-# \- Configuração de variáveis de ambiente.
+### 1. Obter o projeto
 
-# \- Scripts para desenvolvimento e compilação.
+Após sua publicação no GitHub, clone o repositório usando a URL pública correspondente:
 
-#
+```powershell
 
-# \## Requisitos para execução
+git clone https://github.com/laneoliveira135-spec/petconecta.git
 
-#
+cd petconecta
 
-# Antes de iniciar, é necessário ter:
+```
 
-#
+Este é o endereço público do repositório do projeto.
 
-# \- Node.js instalado.
+Se o projeto já estiver salvo no computador, basta abrir o PowerShell na pasta correspondente.
 
-# \- Git instalado.
+### 2. Instalar as dependências
 
-# \- Vite+ disponível pelo comando `vp`.
+```powershell
 
-# \- VS Code (opcional).
+vp install
 
-#
+```
 
-# \## Como executar no Windows
+### 3. Configurar as variáveis de ambiente
 
-#
+No PowerShell:
 
-# \### 1. Obter o projeto
+```powershell
 
-#
+Copy-Item .env.example .env
 
-# Após sua publicação no GitHub, clone o repositório usando a URL pública correspondente:
+```
 
-#
+O arquivo `.env` contém configurações locais e não deve ser publicado no GitHub.
 
-# ```powershell
+### 4. Iniciar a API
 
-# git clone https://github.com/SEU-USUARIO/petconecta.git
+Abra o primeiro terminal na pasta do projeto:
 
-# cd petconecta
+```powershell
 
-# ```
+vp run api
 
-#
+```
 
-# Substitua `SEU-USUARIO` pelo nome real da conta no GitHub.
+A API utiliza o endereço:
 
-#
+http://localhost:3000
 
-# Se o projeto já estiver salvo no computador, basta abrir o PowerShell na pasta correspondente.
+Mantenha esse terminal aberto.
 
-#
+### 5. Iniciar o frontend
 
-# \### 2. Instalar as dependências
+Abra um segundo terminal na mesma pasta:
 
-#
+```powershell
 
-# ```powershell
+vp dev
 
-# vp install
+```
 
-# ```
+Acesse no navegador:
 
-#
+http://localhost:5173
 
-# \### 3. Configurar as variáveis de ambiente
+A página deverá apresentar o status da API como `ok`, acompanhado da data e hora retornadas pelo servidor.
 
-#
+## Testar a API diretamente
 
-# No PowerShell:
+Acesse:
 
-#
+http://localhost:3000/api/health
 
-# ```powershell
+Exemplo de resposta:
 
-# Copy-Item .env.example .env
+```json
+{
+  "status": "ok",
 
-# ```
+  "app": "PetConecta",
 
-#
+  "hora": "2026-10-28T19:00:00.000Z"
+}
+```
 
-# O arquivo `.env` contém configurações locais e não deve ser publicado no GitHub.
+O valor de `hora` varia conforme o momento da requisição.
 
-#
+## Verificações do projeto
 
-# \### 4. Iniciar a API
+Para verificar a formatação e identificar problemas de lint:
 
-#
+```powershell
 
-# Abra o primeiro terminal na pasta do projeto:
+vp check
 
-#
+```
 
-# ```powershell
+Para gerar os arquivos de produção:
 
-# vp run api
+```powershell
 
-# ```
+vp build
 
-#
+```
 
-# A API utiliza o endereço:
+A compilação gera a pasta `dist`, que não precisa ser enviada ao repositório.
 
-#
+## Organização dos arquivos
 
-# http://localhost:3000
+| Arquivo ou pasta | Finalidade |
 
-#
+|---|---|
 
-# Mantenha esse terminal aberto.
+| `server/index.js` | Servidor Express e rota de saúde da API |
 
-#
+| `src/main.js` | Código JavaScript da interface |
 
-# \### 5. Iniciar o frontend
+| `src/style.css` | Estilos visuais |
 
-#
+| `index.html` | Documento HTML principal |
 
-# Abra um segundo terminal na mesma pasta:
+| `vite.config.ts` | Configuração do Vite+ e proxy |
 
-#
+| `package.json` | Dependências e scripts |
 
-# ```powershell
+| `.env.example` | Exemplo de variáveis de ambiente |
 
-# vp dev
+| `.gitignore` | Arquivos excluídos do controle de versões |
 
-# ```
+| `README.md` | Documentação do projeto |
 
-#
+## Segurança e versionamento
 
-# Acesse no navegador:
+O projeto utiliza Git para registrar a evolução do desenvolvimento.
 
-#
+O arquivo `.env` deve permanecer fora do repositório, enquanto `.env.example` pode ser publicado como referência.
 
-# http://localhost:5173
+As dependências instaladas em `node_modules` e os arquivos de compilação em `dist` também não devem ser versionados.
 
-#
+## Próximas etapas
 
-# A página deverá apresentar o status da API como `ok`, acompanhado da data e hora retornadas pelo servidor.
+O projeto poderá evoluir com:
 
-#
+- Banco de dados.
 
-# \## Testar a API diretamente
+- Cadastro de doadores.
 
-#
+- Registro e acompanhamento de doações.
 
-# Acesse:
+- Gerenciamento de campanhas.
 
-#
+- Cadastro de animais resgatados.
 
-# http://localhost:3000/api/health
+- Autenticação de usuários.
 
-#
+- Relatórios administrativos.
 
-# Exemplo de resposta:
+Essas funcionalidades fazem parte do planejamento futuro e não estão implementadas nesta primeira atividade.
 
-#
+---
 
-# ```json
+**Projeto acadêmico desenvolvido para o Projeto Integrador Extensionista II — ADS.**
 
-# {
-
-# &#x20; "status": "ok",
-
-# &#x20; "app": "PetConecta",
-
-# &#x20; "hora": "2026-10-28T19:00:00.000Z"
-
-# }
-
-# ```
-
-#
-
-# O valor de `hora` varia conforme o momento da requisição.
-
-#
-
-# \## Verificações do projeto
-
-#
-
-# Para verificar a formatação e identificar problemas de lint:
-
-#
-
-# ```powershell
-
-# vp check
-
-# ```
-
-#
-
-# Para gerar os arquivos de produção:
-
-#
-
-# ```powershell
-
-# vp build
-
-# ```
-
-#
-
-# A compilação gera a pasta `dist`, que não precisa ser enviada ao repositório.
-
-#
-
-# \## Organização dos arquivos
-
-#
-
-# | Arquivo ou pasta | Finalidade |
-
-# |---|---|
-
-# | `server/index.js` | Servidor Express e rota de saúde da API |
-
-# | `src/main.js` | Código JavaScript da interface |
-
-# | `src/style.css` | Estilos visuais |
-
-# | `index.html` | Documento HTML principal |
-
-# | `vite.config.ts` | Configuração do Vite+ e proxy |
-
-# | `package.json` | Dependências e scripts |
-
-# | `.env.example` | Exemplo de variáveis de ambiente |
-
-# | `.gitignore` | Arquivos excluídos do controle de versões |
-
-# | `README.md` | Documentação do projeto |
-
-#
-
-# \## Segurança e versionamento
-
-#
-
-# O projeto utiliza Git para registrar a evolução do desenvolvimento.
-
-#
-
-# O arquivo `.env` deve permanecer fora do repositório, enquanto `.env.example` pode ser publicado como referência.
-
-#
-
-# As dependências instaladas em `node\_modules` e os arquivos de compilação em `dist` também não devem ser versionados.
-
-#
-
-# \## Próximas etapas
-
-#
-
-# O projeto poderá evoluir com:
-
-#
-
-# \- Banco de dados.
-
-# \- Cadastro de doadores.
-
-# \- Registro e acompanhamento de doações.
-
-# \- Gerenciamento de campanhas.
-
-# \- Cadastro de animais resgatados.
-
-# \- Autenticação de usuários.
-
-# \- Relatórios administrativos.
-
-#
-
-# Essas funcionalidades fazem parte do planejamento futuro e não estão implementadas nesta primeira atividade.
-
-#
-
-# \---
-
-#
-
-# \*\*Projeto acadêmico desenvolvido para o Projeto Integrador Extensionista II — ADS.\*\*
-
-#
-
-# \*\*PetConecta — Tecnologia a serviço da proteção animal.\*\*
+**PetConecta — Tecnologia a serviço da proteção animal.**
